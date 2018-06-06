@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.top-line,
+.right_bar,
+.banner,
+#navbar,
+#iconbar,
+.search-bar{
+	display:none;
+}
+
+#main{
+	clear:both
+}
+.print-table td{
+	padding:10px 3px;
+}

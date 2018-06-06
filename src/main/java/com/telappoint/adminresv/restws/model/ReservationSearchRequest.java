@@ -1,0 +1,51 @@
+package com.telappoint.adminresv.restws.model;
+
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
+
+import com.telappoint.adminresv.form.BaseRequest;
+
+/**
+ * 
+ * @author Murali G
+ *
+ */
+@JsonSerialize(include = Inclusion.NON_NULL)
+public class ReservationSearchRequest extends BaseRequest {
+	private String firstName;
+	private String lastName;
+	private String accountNumber;
+	private String phoneNumber;
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+}

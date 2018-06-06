@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Definition Section Starts Here -->
+
+	<definition name="logIn.definition" template="/WEB-INF/jsp/login/loginLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/login/log-in-header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/login/login.jsp" />
+	</definition>
+
+	<definition name="error.definition" template="/WEB-INF/jsp/error/errorLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="/WEB-INF/jsp/error/error.jsp" />
+	</definition>
+
+	<definition name="base.definition" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="" />		
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu/menu.jsp" />
+		<put-attribute name="iconbar" value="/WEB-INF/jsp/menu/iconbar.jsp" />
+	</definition>
+
+	<definition name="base.popup.definition" template="/WEB-INF/jsp/popUpLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<!-- Definition Section Ends Here -->
+
+	<definition name="error" extends="error.definition">
+		<put-attribute name="title" value="Error" />
+	</definition>
+
+	<definition name="session-expired"  template="/WEB-INF/jsp/error/session-expired.jsp">
+	</definition>
+
+	<definition name="login" extends="logIn.definition">
+		<put-attribute name="title" value="Login" />
+	</definition>
+
+	<definition name="log-out" extends="logIn.definition">
+		<put-attribute name="title" value="Login" />
+	</definition>
+
+	<definition name="home" extends="base.definition">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+	</definition>
+
+	<!-- Location pages definitions - STARTS -->
+		<definition name="locations" extends="base.definition">
+			<put-attribute name="title" value="Locations" />
+			<put-attribute name="body" value="/WEB-INF/jsp/location/locations.jsp" />
+		</definition>
+
+		<definition name="add-location" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/location/addLocation.jsp" />
+		</definition>
+
+		<definition name="edit-location" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/location/editLocation.jsp" />
+		</definition>
+
+		<definition name="locations-close" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/location/locations.jsp" />
+		</definition>
+	<!-- Location pages definitions - ENDS -->
+
+	<!-- Event pages definitions - STARTS -->
+		<definition name="events" extends="base.definition">
+			<put-attribute name="title" value="Events" />
+			<put-attribute name="body" value="/WEB-INF/jsp/event/events.jsp" />
+		</definition>
+		
+		<definition name="add-event" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/event/add-event.jsp" />
+		</definition>
+
+		<definition name="edit-event" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/event/edit-event.jsp" />
+		</definition>
+
+	<!-- Event pages definitions - ENDS -->
+
+	<!-- EventDateTime pages definitions - STARTS -->
+		<definition name="eventDateTime" extends="base.definition">
+			<put-attribute name="title" value=" EventDateTime" />
+			<put-attribute name="body" value="/WEB-INF/jsp/eventdatetime/eventdatetime.jsp" />
+		</definition>
+
+		<definition name="addEventDateTime" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/eventdatetime/addEventDateTime.jsp" />
+		</definition>
+		<definition name="editEventDateTime" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/eventdatetime/editEventDateTime.jsp" />
+		</definition>
+		<definition name="editEventSeats" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/eventdatetime/editEventSeats.jsp" />
+		</definition>
+
+	<!-- EventDateTime pages definitions - ENDS -->
+
+	<!-- Reservations pages definitions - STARTS -->
+		<definition name="reservation-overview" extends="base.definition">
+			<put-attribute name="title" value=" Reservation Overview " />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/reservation-overview.jsp" />
+		</definition>
+		<definition name="reservation-overview-details" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/reservation-overview-details.jsp" />
+		</definition>
+	
+		<definition name="seat-view-calendar" extends="base.definition">
+			<put-attribute name="title" value="Seat View Calendar" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/seat-view-calendar.jsp" />
+		</definition>
+	
+		<definition name="daily-view-calendar" extends="base.definition">
+			<put-attribute name="title" value="Daily View Calendar" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/daily-view-calendar.jsp" />
+		</definition>
+
+		<definition name="monthly-view-calendar" extends="base.definition">
+			<put-attribute name="title" value="Monthly View Calendar" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/monthly-view-calendar.jsp" />
+		</definition>
+
+		<definition name="reservation-reports" extends="base.definition">
+			<put-attribute name="title" value="Reservation Reports" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/reservation-reports.jsp" />
+		</definition>
+
+		<definition name="customer-reservation-details-window" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/customer-reservation-details-window.jsp" />
+		</definition>
+
+		<definition name="reservation-booking-window" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/reservation-booking-window.jsp" />
+		</definition>
+
+		<definition name="booked-resv-response" template="/WEB-INF/jsp/reservations/booked-resv-response.jsp"></definition>
+		<definition name="edit-customer-details" template="/WEB-INF/jsp/reservations/edit-customer-details.jsp"></definition>
+		<definition name="updated-customer-reservation-details-window" template="/WEB-INF/jsp/reservations/updated-customer-reservation-details-window.jsp"></definition>
+		<definition name="updated-reservation-details" template="/WEB-INF/jsp/reservations/updated-reservation-details.jsp"></definition>
+		
+		<definition name="table-print-view" extends="base.definition">
+			<put-attribute name="title" value="Table Print View" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/table-print-view.jsp" />
+		</definition>
+
+		<definition name="search-reservations" extends="base.definition">
+			<put-attribute name="title" value="Search Reservations" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/search-reservations.jsp" />
+		</definition>
+
+		<definition name="resv-automatic-email-reports" extends="base.definition">
+			<put-attribute name="title" value="Automatic Email Reports" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/resv-automatic-email-reports.jsp" />
+		</definition>
+		
+		<definition name="add-automatic-email-reports" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/add-automatic-email-reports.jsp" />
+		</definition>
+	
+		<definition name="resv-reminders" extends="base.definition">
+			<put-attribute name="title" value="Reservation Remainders" />
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/resv-reminders.jsp" />
+		</definition>
+		
+		<definition name="edit-resv-notify-status" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/reservations/edit-resv-notify-status.jsp" />
+		</definition>
+
+	<!-- Reservations pages definitions - ENDS -->
+
+	
+	<!-- Customer details definitions - STARTS -->
+		<definition name="customer-details" extends="base.definition">
+			<put-attribute name="title" value="Customer Details" />
+			<put-attribute name="body" value="/WEB-INF/jsp/customer/customer-details.jsp" />
+		</definition>
+		
+		<definition name="add-customer" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/customer/add-customer.jsp" />
+		</definition>
+
+		<definition name="edit-customer" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/customer/edit-customer.jsp" />
+		</definition>
+
+	<!-- Customer details definitions - ENDS -->
+
+	<!-- Blocked Customer details definitions - STARTS -->
+		<definition name="blocked-customer-details" extends="base.definition">
+			<put-attribute name="title" value="Customer Details" />
+			<put-attribute name="body" value="/WEB-INF/jsp/customer/blocked-customer-details.jsp" />
+		</definition>
+
+		<definition name="edit-blocked-customer" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/customer/edit-blocked-customer.jsp" />
+		</definition>
+
+	<!-- Blocked Customer details definitions - ENDS -->
+
+	<!-- Drop down populate definitions - STARTS -->
+		<definition name="events_dropdown" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/dropdowns/events.jsp" />
+		</definition>
+
+		<definition name="event_date_time_dropdown" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/dropdowns/event_date_time.jsp" />
+		</definition>
+
+	<!-- Drop down populate definitions - ENDS -->
+
+	<!-- Users definitions - STARTS -->
+		<definition name="users" extends="base.definition">
+			<put-attribute name="title" value="Customer Details" />
+			<put-attribute name="body" value="/WEB-INF/jsp/user/users.jsp" />
+		</definition>
+		
+		<definition name="add-user" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/user/add-user.jsp" />
+		</definition>
+
+		<definition name="edit-user" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/user/edit-user.jsp" />
+		</definition>
+
+		<definition name="change-password" extends="base.definition">
+			<put-attribute name="title" value="Change Password" />
+			<put-attribute name="body" value="/WEB-INF/jsp/user/change-password.jsp" />
+		</definition>
+
+		<definition name="change-user-password" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/user/change-user-password.jsp" />
+		</definition>
+
+	<!-- Users definitions - ENDS -->
+
+	<!-- Call Report details definitions - STARTS -->
+		<definition name="call-report" extends="base.definition">
+			<put-attribute name="title" value="Call Report" />
+			<put-attribute name="body" value="/WEB-INF/jsp/tools/call-report.jsp" />
+		</definition>
+
+		<definition name="call-report-trans-states" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/tools/call-report-trans-states.jsp" />
+		</definition>
+
+	<!-- Call Report details definitions - ENDS -->
+
+
+	<!-- Help details definitions - STARTS -->
+		<definition name="help" extends="base.definition">
+			<put-attribute name="title" value="Help" />
+			<put-attribute name="body" value="/WEB-INF/jsp/help.jsp" />
+		</definition>
+
+	<!-- Help details definitions - ENDS -->
+
+	<!-- Support pages definitions - STARTS -->
+		<definition name="support" extends="base.definition">
+			<put-attribute name="title" value="Locations" />
+			<put-attribute name="body" value="/WEB-INF/jsp/support/support.jsp" />
+		</definition>
+
+		<definition name="add-ticket" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/support/add-ticket.jsp" />
+		</definition>
+
+		<definition name="edit-ticket" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/support/edit-ticket.jsp" />
+		</definition>
+	<!-- Support pages definitions - ENDS -->
+
+	<!-- Privilege Settings pages definitions - STARTS -->
+		<definition name="privilege-settings" extends="base.definition">
+			<put-attribute name="title" value="Privilege Settings" />
+			<put-attribute name="body" value="/WEB-INF/jsp/privilegeSettings/privilege-settings.jsp" />
+		</definition>
+	<!-- Privilege Settings pages definitions - ENDS -->
+	
+	<!-- Email Text pages definitions - STARTS -->
+		<definition name="edit-confirmation-email" extends="base.definition">
+			<put-attribute name="title" value="Edit Confirmation Email" />
+			<put-attribute name="body" value="/WEB-INF/jsp/emailText/edit-confirmation-email.jsp" />
+		</definition>
+
+		<definition name="edit-reminder-email" extends="base.definition">
+			<put-attribute name="title" value="Edit Reminder Email" />
+			<put-attribute name="body" value="/WEB-INF/jsp/emailText/edit-reminder-email.jsp" />
+		</definition>
+	<!-- Email Text pages definitions - ENDS -->
+	
+	<!-- Landing Page definitions - STARTS -->
+		<definition name="edit-landing-page" extends="base.definition">
+			<put-attribute name="title" value="Edit Landing Page" />
+			<put-attribute name="body" value="/WEB-INF/jsp/landingPageText/edit-landing-page.jsp" />
+		</definition>
+	<!-- Landing Page definitions - ENDS -->
+
+		<definition name="js-calendar-dates" extends="base.popup.definition">
+			<put-attribute name="body" value="/WEB-INF/jsp/js-calendar-dates.jsp" />
+		</definition>
+
+</tiles-definitions>
